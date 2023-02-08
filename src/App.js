@@ -3,7 +3,8 @@ import TemplateDefault from "./templates/Default";
 import TemplatePage from "./templates/Page";
 
 import Home from "./pages/Home";
-import Customers from "./pages/Customers";
+import CustomersList from "./pages/customers/List";
+import CustomersRegister from "./pages/customers/Register";
 
 const App = () => {
   return (
@@ -11,8 +12,11 @@ const App = () => {
       <Router>
         <TemplateDefault>
           <Switch>
+            <Route path="/Customers/Add">
+              <TemplatePage title="Cadastro de clientes" Component={CustomersRegister} />
+            </Route>
             <Route path="/Customers">
-              <TemplatePage title="Clientes" Component={Customers} />
+              <TemplatePage title="Lista de Clientes" Component={CustomersList} />
             </Route>
             <Route path="/">
               <TemplatePage title="Página inicial" Component={Home} />
