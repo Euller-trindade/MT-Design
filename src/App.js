@@ -5,6 +5,7 @@ import TemplatePage from "./templates/Page";
 import Home from "./pages/Home";
 import CustomersList from "./pages/customers/List";
 import CustomersRegister from "./pages/customers/Register";
+import CustomersEdit from "./pages/customers/Edit";
 
 const App = () => {
   return (
@@ -12,6 +13,9 @@ const App = () => {
       <Router>
         <TemplateDefault>
           <Switch>
+            <Route path="/Customers/Edit/:id">
+              <TemplatePage title="Editar cliente" Component={CustomersEdit} />
+            </Route>
             <Route path="/Customers/Add">
               <TemplatePage title="Cadastro de clientes" Component={CustomersRegister} />
             </Route>
